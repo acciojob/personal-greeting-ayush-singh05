@@ -5,7 +5,7 @@ import {useStare} from 'react';
 const App = () => {
 
   const [text,setText] = useState('');
-  
+
   function handleClick(val){
     setText("Hello " + val.target.value + "!");
   }
@@ -17,7 +17,9 @@ const App = () => {
      </div>
      <input htmlFor="name" type="text" onChange={handleClick} />
 
-     <p>{text}</p>
+     {!!text && (
+      <p>{`Hello ${text}!`}</p>
+    )}
     </div>
   )
 }
